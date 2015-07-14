@@ -7,6 +7,15 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'rules' => [
+                'say' => 'site/say',
+                'say/<message:\w+>' => 'site/say',
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'QFFrjWm7eTT8XrsoMeh5PI_qqtxJYVPB',
@@ -40,6 +49,10 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
     ],
     'params' => $params,
+    'aliases' => [
+        '@name1' => '/var/www/yii-bms-training',
+        '@name2' => 'path/to/path2',
+    ],
 ];
 
 if (YII_ENV_DEV) {

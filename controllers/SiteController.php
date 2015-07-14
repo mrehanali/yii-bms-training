@@ -120,6 +120,7 @@ class SiteController extends Controller
 
     public function actionListCountry()
     {
+
         $query = Country::find();
 
         $pagination = new Pagination([
@@ -137,5 +138,10 @@ class SiteController extends Controller
             'pagination' => $pagination,
         ]);
 
+    }
+    public function actionSay($message = ' Hello')
+    {
+
+        return $this->render('say', ['message' => $message]);
     }
 }
