@@ -14,6 +14,7 @@ $config = [
             'rules' => [
                 'say' => 'site/say',
                 'say/<message:\w+>' => 'site/say',
+                'user/create/<id:\d+>' => 'site/say',
             ],
         ],
         'request' => [
