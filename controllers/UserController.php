@@ -76,7 +76,7 @@ class UserController extends Controller
             $model->email = $_POST['User']['email'];
 
             if ($model->save())
-                Yii::$app->getResponse()->redirect(array('user/detail','id'=>$model->id));
+                return Yii::$app->getResponse()->redirect(array('user/detail','id'=>$model->id));
         }
 
         echo $this->render('create', array(
