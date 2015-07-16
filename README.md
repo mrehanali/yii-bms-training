@@ -54,7 +54,7 @@ Add
 ## Update Changes to Git
 ```sh
 sudo -s
-cd /home/coeus/projects/yii-bms-training
+cd /home/coeus/projects/bms-learning
 git add -A
 git commit -m [comments]
 git push origin feature/YOUR_NAME
