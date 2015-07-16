@@ -1,5 +1,5 @@
 <?php
-/* @var $this yii\web\View */
+ echo $this->title = 'Detail';
 ?>
 <h1>user/detail</h1>
 

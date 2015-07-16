@@ -1,5 +1,6 @@
 <?php
 /* @var $this yii\web\View */
+echo $this->title = 'Index';
 ?>
 <h1>user/index</h1>
 

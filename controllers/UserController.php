@@ -33,7 +33,7 @@ class UserController extends Controller
             $user->name = $name;
             $user->email = $email;
             $user->save();
-            return $this->render('create', ['model' => $model]);
+            return Yii::$app->getResponse()->redirect(array('user/detail', 'id' => $user->id));
         } else {
             return $this->render('create', ['model' => $model]);
         }
@@ -76,7 +76,7 @@ class UserController extends Controller
             $model->email = $_POST['User']['email'];
 
             if ($model->save())
-                return Yii::$app->getResponse()->redirect(array('user/detail','id'=>$model->id));
+                return Yii::$app->getResponse()->redirect(array('user/detail', 'id' => $model->id));
         }
 
         echo $this->render('create', array(

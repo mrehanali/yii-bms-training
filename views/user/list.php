@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
+echo $this->title = 'List';
 ?>
     <table class="table">
         <tr>

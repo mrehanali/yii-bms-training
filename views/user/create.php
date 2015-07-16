@@ -2,6 +2,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+echo $this->title = 'Create';
 ?>
 
 <?php $form = ActiveForm::begin(); ?>
