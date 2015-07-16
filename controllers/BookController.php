@@ -66,7 +66,7 @@ class BookController extends Controller
             if ($model->save()) {
                 Yii::$app->session->setFlash('BookEdited');
                 return Yii::$app->getResponse()->redirect(array('book/detail', 'id' => $model->id));
-            }else{
+            } else {
                 Yii::$app->session->setFlash('BookNotEdited');
                 return Yii::$app->getResponse()->redirect(array('book/detail', 'id' => $model->id));
             }
@@ -81,6 +81,14 @@ class BookController extends Controller
     {
         $book = Book::findOne($id);
         echo $this->render('detail', ['book' => $book]);
+    }
+
+    public function actionDelete($id)
+    {
+        $book = Book::findOne($id);
+        $book->delete();
+        Yii::$app->session->setFlash('BookDeleted');
+        return Yii::$app->getResponse()->redirect(array('book/list'));
     }
 
 }

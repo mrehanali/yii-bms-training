@@ -4,6 +4,11 @@ use yii\widgets\LinkPager;
 
 echo $this->title = 'List';
 ?>
+<?php if (Yii::$app->session->hasFlash('BookDeleted')): ?>
+    <div class="alert alert-success">
+        Book has been deleted
+    </div>
+<?php endif; ?>
 <table class="table">
     <tr>
         <th>
@@ -34,8 +39,9 @@ echo $this->title = 'List';
             <td> <?= $book->isbn ?> </td>
             <td> <?= $book->category ?> </td>
             <td>
-                <?php echo Html::a('EDIT', array('book/edit', 'id' => $book->id), array('class' => 'btn btn-primary')); ?>
-                <?php echo Html::a('Delete', array('book/delete', 'id' => $book->id), array('class' => 'btn btn-danger')); ?>
+                <?php echo Html::a('', array('book/edit', 'id' => $book->id), array('class' => 'glyphicon glyphicon-edit')); ?>
+                <!--    <a class="glyphicon glyphicon-remove" id="delete-book"></a>-->
+                <?php echo Html::a('', array('book/delete', 'id' => $book->id), array('confirm' => 'Are you sure?', 'class' => 'glyphicon glyphicon-remove', 'id' => 'delete-book')); ?>
             </td>
         </tr>
 
