@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
 <?= $form->field($model, 'isbn') ?>
 
-<?= $form->field($model, 'category')->radioList(['1' => 'fiction', '2' => 'story', '3' => 'novel', '4' => 'magazine']); ?>
+<?= $form->field($model, 'category')->radioList(['fiction' => 'fiction', 'story' => 'story', 'novel' => 'novel', 'magazine' => 'magazine']); ?>
 
 
     <div class="form-group">

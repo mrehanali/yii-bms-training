@@ -33,8 +33,14 @@ class BookController extends Controller
             $book->author = $model->author;
             $book->isbn = $model->isbn;
             $book->category = $model->category;
-            $book->save();
-            return $this->render('create', ['model' => $model]);
+            if ($book->save()) {
+                Yii::$app->session->setFlash('BookAdded');
+                Yii::$app->getResponse()->redirect(array('book/index'));
+            } else {
+                Yii::$app->session->setFlash('BookNotAdded');
+                Yii::$app->getResponse()->redirect(array('book/index'));
+            }
+
 
         } else {
             return $this->render('create', ['model' => $model]);
@@ -57,8 +63,13 @@ class BookController extends Controller
             $model->isbn = $_POST['Book']['isbn'];
             $model->category = $_POST['Book']['category'];
 
-            if ($model->save())
+            if ($model->save()) {
+                Yii::$app->session->setFlash('BookEdited');
                 return Yii::$app->getResponse()->redirect(array('book/detail', 'id' => $model->id));
+            }else{
+                Yii::$app->session->setFlash('BookNotEdited');
+                return Yii::$app->getResponse()->redirect(array('book/detail', 'id' => $model->id));
+            }
         }
 
         echo $this->render('create', array(
