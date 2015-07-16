@@ -35,6 +35,7 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
+                    ['label' => 'Book Management', 'url' => ['/book/index']],
                     ['label' => 'Home', 'url' => ['/site/index']],
                     ['label' => 'List users', 'url' => ['/user/list']],
                     ['label' => 'Create user', 'url' => ['/user/create']],
