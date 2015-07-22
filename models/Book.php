@@ -17,4 +17,11 @@ class Book extends ActiveRecord
     {
         return 'books';
     }
+    
+    public function rules()
+    {
+        return [
+            [['title', 'author', 'isbn', 'type'], 'required']
+        ];
+    }
 }

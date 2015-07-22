@@ -38,6 +38,17 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => true,
+            'enableStrictParsing' => true,
+            'rules' => [
+                'books' => 'book/list', 
+                'books/create' => 'book/create',
+                'books/update/<id:\d+>' => 'book/update',
+                'books/delete/<id:\d+>' => 'book/delete',
+            ],
+        ]
     ],
     'params' => $params,
 ];
