@@ -4,11 +4,14 @@ use yii\widgets\LinkPager;
 
 echo $this->title = 'List';
 ?>
-<?php if (Yii::$app->session->hasFlash('BookDeleted')): ?>
-    <div class="alert alert-success">
-        Book has been deleted
-    </div>
-<?php endif; ?>
+
+<div class="alert alert-success" id="BookDeleted">
+    Book has been deleted
+</div>
+<div class="alert alert-danger" id="BookNotDeleted">
+    Book has not been deleted
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -32,7 +35,7 @@ echo $this->title = 'List';
     </tr>
 
     <?php foreach ($books as $book): ?>
-        <tr>
+        <tr id="row_<?php echo $book->id ?>">
             <td> <?= Html::a('Details', ['book/detail', 'id' => $book->id]); ?> </td>
             <td> <?= $book->title ?> </td>
             <td> <?= $book->author ?> </td>
@@ -40,8 +43,10 @@ echo $this->title = 'List';
             <td> <?= $book->category ?> </td>
             <td>
                 <?php echo Html::a('', array('book/edit', 'id' => $book->id), array('class' => 'glyphicon glyphicon-edit')); ?>
-                <!--    <a class="glyphicon glyphicon-remove" id="delete-book"></a>-->
-                <?php echo Html::a('', array('book/delete', 'id' => $book->id), array('confirm' => 'Are you sure?', 'class' => 'glyphicon glyphicon-remove', 'id' => 'delete-book')); ?>
+                <a class="glyphicon glyphicon-remove" onclick="deleteBook(<?= $book->id ?>)"
+                   style="cursor:pointer;"></a>
+
+
             </td>
         </tr>
 

@@ -20,10 +20,11 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
         'css/jquery.alerts.css',
-
+        'jconfirm/css/jquery-confirm.css',
     ];
     public $js = [
         'js/jquery.alerts.js',
+        'jconfirm/js/jquery-confirm.js',
         'js/custom.js',
 
 

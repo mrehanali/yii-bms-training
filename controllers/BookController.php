@@ -86,9 +86,12 @@ class BookController extends Controller
     public function actionDelete($id)
     {
         $book = Book::findOne($id);
-        $book->delete();
-        Yii::$app->session->setFlash('BookDeleted');
-        return Yii::$app->getResponse()->redirect(array('book/list'));
+        if ($book->delete()) {
+            return json_encode(['status' => 'success']);
+        } else {
+            return json_encode(['status' => 'fail']);
+        }
+
     }
 
 }
