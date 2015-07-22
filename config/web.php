@@ -8,13 +8,15 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'urlManager' => [
-            'enablePrettyUrl' => false,
-            'showScriptName' => false,
-            'enableStrictParsing' => false,
+            'enablePrettyUrl' => true,
+            'showScriptName' => true,
+            'enableStrictParsing' => true,
             'rules' => [
-                'say' => 'site/say',
-                'say/<message:\w+>' => 'site/say',
-                'user/create/<id:\d+>' => 'site/say',
+                'books' => 'book/index',
+                'book/create' => 'book/create',
+                'book/edit/<id:\d+>' => 'book/edit',
+                'book/<id:\d+>' => 'book/show',
+                'book/delete/<id:\d+>' => 'book/destroy',
             ],
         ],
         'request' => [
