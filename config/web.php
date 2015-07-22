@@ -7,6 +7,16 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+        'urlManager' => [
+            'enablePrettyUrl' => false,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'rules' => [
+                'say' => 'site/say',
+                'say/<message:\w+>' => 'site/say',
+                'user/create/<id:\d+>' => 'site/say',
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'qdPRczoNZVS9fkSZi4nRw6Z_MJ7fXZL2',

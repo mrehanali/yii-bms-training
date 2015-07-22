@@ -1,7 +1,7 @@
 <?php
 
 namespace app\models;
-
+use yii\db\ActiveRecord;
 use Yii;
 
 /**
@@ -11,11 +11,11 @@ use Yii;
  * @property string $title
  * @property string $author
  * @property string $isbn
- * @property integer $category
+ * @property integer $category_id
  * @property string $created_at
  * @property string $updated_at
  */
-class Book extends \yii\db\ActiveRecord
+class Book extends ActiveRecord
 {
     /**
      * @Description:    This function is to set table name for Model
@@ -33,8 +33,8 @@ class Book extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'author', 'isbn', 'category'], 'required'],  //Required Fields
-            [['category'], 'integer'],                              //Should be a valid integer
+            [['title', 'author', 'isbn', 'category_id'], 'required'],  //Required Fields
+            [['category_id'], 'integer'],                              //Should be a valid integer
             [['created_at', 'updated_at'], 'safe'],                 //Good to go (No validation required)
             [['title', 'author'], 'string', 'max' => 200],          //Strings with max 200 characters
             [['isbn'], 'string', 'max' => 17]                       //ISBN is maximum 17 characters including dashes
@@ -52,7 +52,7 @@ class Book extends \yii\db\ActiveRecord
             'title' => 'Book Title',
             'author' => 'Author Name',
             'isbn' => 'ISBN Number',
-            'category' => 'Book Category',
+            'category_id' => 'Book Category',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
