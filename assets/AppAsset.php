@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/jquery.alerts.css',
         'jconfirm/css/jquery-confirm.css',
+        'css/login.css',
     ];
     public $js = [
         'js/jquery.alerts.js',

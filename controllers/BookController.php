@@ -28,20 +28,13 @@ class BookController extends Controller
         $model = new Book;
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $book = new Book();
-            $book->title = $model->title;
-            $book->author = $model->author;
-            $book->isbn = $model->isbn;
-            $book->category = $model->category;
-            if ($book->save()) {
+            if ($model->save()) {
                 Yii::$app->session->setFlash('BookAdded');
                 Yii::$app->getResponse()->redirect(array('book/index'));
             } else {
                 Yii::$app->session->setFlash('BookNotAdded');
                 Yii::$app->getResponse()->redirect(array('book/index'));
             }
-
-
         } else {
             return $this->render('create', ['model' => $model]);
         }
@@ -57,12 +50,7 @@ class BookController extends Controller
         if ($model === NULL)
             throw new HttpException(404, 'Document Does Not Exist');
 
-        if (isset($_POST['Book'])) {
-            $model->title = $_POST['Book']['title'];
-            $model->author = $_POST['Book']['author'];
-            $model->isbn = $_POST['Book']['isbn'];
-            $model->category = $_POST['Book']['category'];
-
+        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
             if ($model->save()) {
                 Yii::$app->session->setFlash('BookEdited');
                 return Yii::$app->getResponse()->redirect(array('book/detail', 'id' => $model->id));
@@ -71,7 +59,6 @@ class BookController extends Controller
                 return Yii::$app->getResponse()->redirect(array('book/detail', 'id' => $model->id));
             }
         }
-
         echo $this->render('create', array(
             'model' => $model
         ));

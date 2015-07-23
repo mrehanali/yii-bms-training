@@ -1,0 +1,78 @@
+.background {
+    background: rgba(2, 37, 80, 1);
+    background: -moz-linear-gradient(-45deg, rgba(2, 37, 80, 1) 0%, rgba(31, 109, 173, 1) 71%, rgba(13, 66, 119, 1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(2, 37, 80, 1)), color-stop(71%, rgba(31, 109, 173, 1)), color-stop(100%, rgba(13, 66, 119, 1)));
+    background: -webkit-linear-gradient(-45deg, rgba(2, 37, 80, 1) 0%, rgba(31, 109, 173, 1) 71%, rgba(13, 66, 119, 1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(2, 37, 80, 1) 0%, rgba(31, 109, 173, 1) 71%, rgba(13, 66, 119, 1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(2, 37, 80, 1) 0%, rgba(31, 109, 173, 1) 71%, rgba(13, 66, 119, 1) 100%);
+    background: linear-gradient(135deg, rgba(2, 37, 80, 1) 0%, rgba(31, 109, 173, 1) 71%, rgba(13, 66, 119, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#022550', endColorstr='#0d4277', GradientType=0);
+    position: relative;
+}
+
+.form-center {
+    margin: 0 auto;
+    width: 100px;
+    margin-top: 144px;
+}
+
+.form-top-margin {
+    margin-top: 128px;
+}
+
+.field-height {
+    height: 28px;
+    border: 1px solid #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    padding-left: 12px;
+    margin-left: 12px;
+}
+
+.password-top-margin {
+    margin-top: 8px;
+}
+
+.label-right-margin {
+    display: inline-block;
+    width: 110px;
+    font-weight: bold;
+    text-align: right;
+
+}
+.error-message-class{
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 120px;
+    width: 200px;
+}
+.yellow-button{
+    background-color: #ffed00;
+    height: 28px;
+    margin-top: -3px;
+    margin-left: -5px;
+}
+.u-list{
+    margin-top: 42px;
+    margin-left: -30px;
+    color: #fff;
+    width: 200px;
+}
+.li-list{
+    color: #fff;
+}
+.li-list:hover{
+    color: #fff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.form-field-grp{
+    width: 400px;
+}
+.error-message-class{
+    margin-top: -22px;
+}
+.inner-fld-div{
+    margin-left: -113px;
+
+}
