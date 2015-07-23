@@ -9,7 +9,8 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#022550', endColorstr='#0d4277', GradientType=0);
     position: relative;
     width: 1317px;
-    height: 100%;
+    height: auto;
+    /*background-repeat: no-repeat;*/
 }
 
 .form-center {
@@ -94,4 +95,40 @@
 .checkBox-parent {
     margin-left: -18px;
     color: #fff;
+}
+
+.bottom-line {
+    margin-top: 190px;
+    width: auto;
+    color: #FFFFFF;
+}
+
+.p-color {
+    color: #FFFFFF;
+    display: inline;
+}
+
+.foo-div {
+    margin-top: 12px;
+    width: 100%;
+
+}
+
+.text-1-2-margin {
+    margin-left: 20px;
+}
+
+.text-3-margin {
+    float: right;
+    margin-right: 20px;
+}
+
+.inner-fld-div .form-field-grp:first-child .form-group:first-child .error-message-class {
+    margin-top: -28px;
+    margin-left: 126px;
+}
+
+.inner-fld-div .form-field-grp:nth-child(2) .form-group:nth-child(2) .error-message-class {
+    margin-top: -28px;
+    margin-left: 126px;
 }

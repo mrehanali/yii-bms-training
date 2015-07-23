@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'id' => 'login-form',
         'options' => ['class' => 'form-horizontal form-top-margin'],
         'fieldConfig' => [
-            'template' => "<span class='error-message-class'>{error}</span>\n{label}<span>{input}</span>",
+            'template' => "<div class='error-message-class'>{error}</div>\n{label}<span>{input}</span>",
             'labelOptions' => ['class' => ''],
         ],
     ]); ?>
@@ -54,4 +54,15 @@ $this->params['breadcrumbs'][] = $this->title;
     </ul>
 
     <?php ActiveForm::end(); ?>
+
+
 </div>
+<hr class="bottom-line">
+<div class="foo-div">
+    <p class="p-color text-1-2-margin">text1</p>
+
+    <p class="p-color text-1-2-margin">text2</p>
+
+    <p class="p-color text-3-margin">text3</p>
+</div>
+
