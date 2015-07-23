@@ -8,6 +8,8 @@
     background: linear-gradient(135deg, rgba(2, 37, 80, 1) 0%, rgba(31, 109, 173, 1) 71%, rgba(13, 66, 119, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#022550', endColorstr='#0d4277', GradientType=0);
     position: relative;
+    width: 1317px;
+    height: 100%;
 }
 
 .form-center {
@@ -38,41 +40,58 @@
     width: 110px;
     font-weight: bold;
     text-align: right;
+    color: #fff;
 
 }
-.error-message-class{
+
+.error-message-class {
     position: absolute;
     margin-top: -30px;
     margin-left: 120px;
     width: 200px;
 }
-.yellow-button{
+
+.yellow-button {
     background-color: #ffed00;
     height: 28px;
     margin-top: -3px;
-    margin-left: -5px;
+    margin-left: -43px;
+    width: 164px;
+    border: 0px;
+    opacity: .5;
 }
-.u-list{
+
+.u-list {
     margin-top: 42px;
-    margin-left: -30px;
+    margin-left: -57px;
     color: #fff;
     width: 200px;
 }
-.li-list{
+
+.li-list {
     color: #fff;
 }
-.li-list:hover{
+
+.li-list:hover {
     color: #fff;
     cursor: pointer;
     text-decoration: underline;
 }
-.form-field-grp{
+
+.form-field-grp {
     width: 400px;
 }
-.error-message-class{
+
+.error-message-class {
     margin-top: -22px;
 }
-.inner-fld-div{
-    margin-left: -113px;
 
+.inner-fld-div {
+    margin-left: -140px;
+
+}
+
+.checkBox-parent {
+    margin-left: -18px;
+    color: #fff;
 }
