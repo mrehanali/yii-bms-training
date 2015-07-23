@@ -3,6 +3,8 @@
 ### Requirements
 * PHP 5.4+ with mod rewrites enabled
 * PDO with pdo_mysqli extension
+* PHP GD Library `sudo apt-get install php5-gd`
+* FreeType `sudo apt-get install freetype*`
 
 ## Installation (Basic)
 
