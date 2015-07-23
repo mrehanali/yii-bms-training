@@ -26,9 +26,10 @@ elseif (Yii::$app->session->hasFlash('bookDeleted')):
         <div class="alert alert-success">
             Book Deleted Successfully.
         </div>
-<?php
-endif; 
+<?php endif; ?>
 
+<a href="<?php echo Url::to(['create']) ?>">Create New Book</a>
+<?php
 if(count($books)){ ?>
     <table class="table table-hover">
         <thead>

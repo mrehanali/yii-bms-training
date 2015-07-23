@@ -21,7 +21,8 @@ class Book extends ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'author', 'isbn', 'type'], 'required']
+            [['title', 'author', 'isbn', 'type'], 'required'],
+//            [['isbn'], 'integer']
         ];
     }
 }

@@ -1,0 +1,104 @@
+html{
+    height: 800px;
+}
+.login-body{
+    /*text-align: center;*/
+    background: rgba(2,37,80,1);
+        background: -moz-linear-gradient(-45deg, rgba(2,37,80,1) 0%, rgba(31,109,173,1) 71%, rgba(13,66,119,1) 100%);
+        background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(2,37,80,1)), color-stop(71%, rgba(31,109,173,1)), color-stop(100%, rgba(13,66,119,1)));
+        background: -webkit-linear-gradient(-45deg, rgba(2,37,80,1) 0%, rgba(31,109,173,1) 71%, rgba(13,66,119,1) 100%);
+        background: -o-linear-gradient(-45deg, rgba(2,37,80,1) 0%, rgba(31,109,173,1) 71%, rgba(13,66,119,1) 100%);
+        background: -ms-linear-gradient(-45deg, rgba(2,37,80,1) 0%, rgba(31,109,173,1) 71%, rgba(13,66,119,1) 100%);
+        background: linear-gradient(135deg, rgba(2,37,80,1) 0%, rgba(31,109,173,1) 71%, rgba(13,66,119,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#022550', endColorstr='#0d4277', GradientType=0 );
+    height : auto;
+    background-repeat : no-repeat;
+}
+
+.login-contanier{
+    margin: 0 auto;
+    width : 960px;
+    height: 768px;
+}
+
+.login-image{
+    padding-top: 144px; 
+    padding-bottom: 105px; 
+    margin: 0 auto;
+    width: 100px;
+}
+.login-image img{
+   height: 100px;
+   width: 100px;
+   border: 1px solid white;
+}
+
+.login-fields-row{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.login-fields-row label{
+    text-align: center;
+    color: #fff !important;
+    padding-right: 12px;
+    margin: 0;
+}
+
+.form-group{
+    text-align: center;
+    margin: 0px;
+}
+
+.form-group .checkbox{
+    text-align: center;
+    margin: 0px;
+    padding-right: 120px;
+    color: #fff;
+}
+
+.form-group .checkbox input[type=checkbox]{
+    margin-top: 0px;
+}
+
+.login-fields-row input{
+    border: 1px solid #fff !important;
+    height: 28px;
+    width: 250px;
+    display: inline;
+    margin-right: 60px;
+    border-radius: 0px;
+    background: transparent;
+    color: #fff;
+}
+.login-error{
+    margin: 0;
+    padding: 0;
+}
+p.help-block-error{
+    margin: 0;
+    padding: 3px 78px 4px 0;
+    height: 24px;
+    font-size: 12px;
+    color: #ff2f3b !important;
+}
+
+.login-btn {
+    background-color: #ffed00;
+    color: #000;
+    border: 1px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0;
+    text-align: center;
+    width: 250px;
+    height: 28px;
+    
+}
+
+.submit-login{
+    text-align: center;
+    padding: 0 0 42px 18px;
+}
