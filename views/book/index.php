@@ -1,12 +1,14 @@
 <?php
 use yii\helpers\Html;
-use yii\widgets\LinkPager;
-$this->title = 'Books List';
+$this->title = 'Books';
 ?>
 <h1><?php echo $this->title; ?></h1>
 <?php
+if (Yii::$app->session->hasFlash('notification')){
+	echo $this->render('_notify', ['message' => $notification['message'], 'status' => $notification['status']]);
+}
 echo Html::a('Create New', array('book/create'), array('class' => 'btn btn-primary pull-right')); ?>
-<table class="table">
+<table class="table table-focus">
 <?php if(!empty($books)){ ?>
 <tr>
 	<th>Title</th>

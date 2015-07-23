@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 $this->title = $book->title."'s Details";
 ?>
-<h1> <?php echo $this->title; ?></h1>
+<h1><?php echo $this->title; ?></h1>
 <?php echo Html::a('Create New', array('book/create'), array('class' => 'btn btn-primary pull-right')); ?>
 <p>
     Title: <?php echo $book->title; ?>

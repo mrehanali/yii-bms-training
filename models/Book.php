@@ -33,11 +33,11 @@ class Book extends ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'author', 'isbn', 'category_id'], 'required'],  //Required Fields
-            [['category_id'], 'integer'],                              //Should be a valid integer
-            [['created_at', 'updated_at'], 'safe'],                 //Good to go (No validation required)
-            [['title', 'author'], 'string', 'max' => 200],          //Strings with max 200 characters
-            [['isbn'], 'string', 'max' => 17]                       //ISBN is maximum 17 characters including dashes
+            [['title', 'author', 'isbn', 'category_id'], 'required'],   //Required Fields
+        [['category_id'], 'integer'],                                   //Should be a valid integer
+            [['created_at', 'updated_at'], 'safe'],                     //Good to go (No validation required)
+        [['title', 'author'], 'string', 'max' => 200],                  //Strings with max 200 characters
+            [['isbn'], 'string', 'max' => 17]                           //ISBN is maximum 17 characters including dashes
         ];
     }
 

@@ -8,24 +8,63 @@ use Yii;
 
 class BookController extends Controller
 {
+    public $defaultAction = 'index';
+    private function categoriesList()
+    {
+        if ( isset(Yii::$app->params['bookCategories']) )
+            return Yii::$app->params['bookCategories'];
+    }
+    // $this->makeResponse(['error', 'There is some error while creating new record']);
+    private function makeResponse(array $values)
+    {
+        Yii::$app->session->setFlash('notification');
+        Yii::$app->session->setFlash('message', $values[0]);
+        Yii::$app->session->setFlash('status', $values[1]);
+        return true;
+    }
+    private function getResponse()
+    {
+        $message = Yii::$app->session->getFlash('message');
+        $status = Yii::$app->session->getFlash('status');
+        return $notification = ['status' => $status, 'message' => $message];
+    }
+
+    public function actionIndex()
+    {
+        $categories = $this->categoriesList();
+        $query = Book::find();
+        $books = $query->orderBy('title')->all();
+        $notification = $this->getResponse();
+        print_r($notification); exit();
+        return $this->render('index', ['books' => $books, 'categories' => $categories, 'notification' => $notification]);
+    }
     public function actionCreate()
     {
         $bookModel = new Book;
-        if ( isset(Yii::$app->params['bookCategories']) )
-            $categories = Yii::$app->params['bookCategories'];
-        if ($bookModel->load(Yii::$app->request->post()) && $bookModel->validate()) {
-            $nbook = new Book();
-            $nbook->title = $bookModel->title;
-            $nbook->author = $bookModel->author;
-            $nbook->isbn = $bookModel->isbn;
-            $nbook->category_id = $bookModel->category_id;
-            if ($nbook->save()) {
-                Yii::$app->getResponse()->redirect(array('book/index'));
-            } else {
-                Yii::$app->getResponse()->redirect(array('book/index'));
-            }
+        if ($bookModel->load(Yii::$app->request->post()) && $bookModel->save()) {
+            $this->makeResponse(['error', 'There is some error while creating new record']);
+            return $this->redirect(['book/index']);
         } else {
-            return $this->render('create', ['bookModel' => $bookModel, 'categories' => $categories]);
+            $categories = $this->categoriesList();
+            $notification = $this->getResponse();
+            return $this->render('create', ['bookModel' => $bookModel, 'categories' => $categories, 'notification' => $notification]);
+        }
+    }
+    public function actionEdit($id)
+    {
+        if ($id === NULL)
+            throw new HttpException(404, 'Resource Not Found');
+        $bookModel = Book::findOne($id);
+        if ($bookModel === NULL)
+            throw new HttpException(404, 'Document Not Found');
+        if ($bookModel->load(Yii::$app->request->post()) && $bookModel->save()) {
+            return $this->redirect(['book/index']);
+        } else {
+            $categories = $this->categoriesList();
+            return $this->render('edit', [
+                'bookModel' => $bookModel,
+                'categories' => $categories,
+            ]);
         }
     }
     public function actionDestroy($id)
@@ -37,48 +76,14 @@ class BookController extends Controller
             throw new HttpException(404, 'Document Not Found');
         $book = Book::findOne($id);
         if ($book->delete()) {
-            Yii::$app->getResponse()->redirect(array('book/index'));
+            return $this->redirect(['book/index']);
         } else {
-            Yii::$app->getResponse()->redirect(array('book/index'));
+            return $this->redirect(['book/index']);
         }
-    }
-    public function actionEdit($id)
-    {
-        if ($id === NULL)
-            throw new HttpException(404, 'Resource Not Found');
-            $bookModel = Book::findOne($id);
-        if ($bookModel === NULL)
-            throw new HttpException(404, 'Document Not Found');
-        if ( isset(Yii::$app->params['bookCategories']) )
-            $categories = Yii::$app->params['bookCategories'];
-
-        if (isset($_POST['Book'])){
-            $bookModel->title = $_POST['Book']['title'];
-            $bookModel->author = $_POST['Book']['author'];
-            $bookModel->isbn = $_POST['Book']['isbn'];
-            $bookModel->category_id = $_POST['Book']['category_id'];
-            $bookModel->updated_at = date('Y-m-d H:i:s');
-            if ($bookModel->save()) {
-                Yii::$app->getResponse()->redirect(array('book/index'));
-            } else {
-                Yii::$app->getResponse()->redirect(array('book/index'));
-            }
-        } else {
-            return $this->render('create', ['bookModel' => $bookModel, 'categories' => $categories]);
-        }
-    }
-    public function actionIndex()
-    {
-        if ( isset(Yii::$app->params['bookCategories']) )
-            $categories = Yii::$app->params['bookCategories'];
-        $query = Book::find();
-        $books = $query->orderBy('title')->all();
-        return $this->render('index', ['books' => $books, 'categories' => $categories]);
     }
     public function actionShow($id)
     {
-        if ( isset(Yii::$app->params['bookCategories']) )
-            $categories = Yii::$app->params['bookCategories'];
+        $categories = $this->categoriesList();
         $book = Book::findOne($id);
         return $this->render('show', ['book' => $book, 'categories' => $categories]);
     }
