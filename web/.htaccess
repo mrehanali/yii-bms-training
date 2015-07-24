@@ -4,7 +4,7 @@
     </IfModule>
 
     RewriteEngine On
-
+    php_flag display_errors 1
     # Redirect Trailing Slashes...
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 

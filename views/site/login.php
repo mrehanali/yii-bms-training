@@ -23,9 +23,11 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
     <div class="inner-fld-div">
+
         <div class="form-field-grp">
             <?= $form->field($model, 'username')->textInput(['class' => 'field-height'])->label('Name', ['class' => 'label-right-margin']) ?>
         </div>
+
         <div class="form-field-grp">
             <?= $form->field($model, 'password')->passwordInput(['class' => 'field-height password-top-margin'])->label('Password', ['class' => 'label-right-margin']) ?>
         </div>

@@ -1,3 +1,7 @@
+html {
+    height: 900px;
+}
+
 .background {
     background: rgba(2, 37, 80, 1);
     background: -moz-linear-gradient(-45deg, rgba(2, 37, 80, 1) 0%, rgba(31, 109, 173, 1) 71%, rgba(13, 66, 119, 1) 100%);
@@ -8,9 +12,9 @@
     background: linear-gradient(135deg, rgba(2, 37, 80, 1) 0%, rgba(31, 109, 173, 1) 71%, rgba(13, 66, 119, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#022550', endColorstr='#0d4277', GradientType=0);
     position: relative;
-    width: 1317px;
+    width: 970px;
     height: auto;
-    /*background-repeat: no-repeat;*/
+    margin: auto;
 }
 
 .form-center {
@@ -33,10 +37,11 @@
 }
 
 .password-top-margin {
-    margin-top: 8px;
+    margin-top: 24px;
 }
 
 .label-right-margin {
+    margin-bottom: 0px;
     display: inline-block;
     width: 110px;
     font-weight: bold;
@@ -53,13 +58,13 @@
 }
 
 .yellow-button {
+    margin: 0;
     background-color: #ffed00;
     height: 28px;
-    margin-top: -3px;
+    margin-top: 14px;
     margin-left: -43px;
     width: 164px;
     border: 0px;
-    opacity: .5;
 }
 
 .u-list {
@@ -84,7 +89,7 @@
 }
 
 .error-message-class {
-    margin-top: -22px;
+    color: #0000ff;
 }
 
 .inner-fld-div {
@@ -93,7 +98,9 @@
 }
 
 .checkBox-parent {
+    margin: 0;
     margin-left: -18px;
+    margin-top: 14px;
     color: #fff;
 }
 
@@ -123,7 +130,7 @@
     margin-right: 20px;
 }
 
-.inner-fld-div .form-field-grp:first-child .form-group:first-child .error-message-class {
+/*.inner-fld-div .form-field-grp:first-child .form-group:first-child .error-message-class {
     margin-top: -28px;
     margin-left: 126px;
 }
@@ -131,4 +138,39 @@
 .inner-fld-div .form-field-grp:nth-child(2) .form-group:nth-child(2) .error-message-class {
     margin-top: -28px;
     margin-left: 126px;
+}*/
+
+.form-group {
+    margin: 0;
+}
+
+.error-message-class {
+    margin: 0px;
+}
+
+.error-message-class p {
+    margin: 0px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    padding: 0;
+
+}
+
+.inner-fld-div > .form-field-grp:first-child .error-message-class {
+    margin-top: -24px;
+    margin-left: 105px;
+}
+
+.inner-fld-div > .form-field-grp .error-message-class {
+    margin-top: 0px;
+    margin-left: 105px;
+}
+.help-block .help-block-error .error-message-class {
+
+}
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+    color: #ff2f3b;
+}
+.checkbox{
+    padding: 0;
 }
