@@ -6,6 +6,11 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'books' => [
+            'class' => 'app\modules\books\BooksModule',
+        ],
+    ],
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -15,6 +20,7 @@ $config = [
                 'say' => 'site/say',
                 'say/<message:\w+>' => 'site/say',
                 'user/create/<id:\d+>' => 'site/say',
+                'books' => 'books/book/list',
             ],
         ],
         'request' => [
@@ -58,8 +64,8 @@ $config = [
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
-  //  $config['bootstrap'][] = 'debug';
-  //  $config['modules']['debug'] = 'yii\debug\Module';
+    //  $config['bootstrap'][] = 'debug';
+    //  $config['modules']['debug'] = 'yii\debug\Module';
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = 'yii\gii\Module';
