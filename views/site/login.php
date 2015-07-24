@@ -35,5 +35,16 @@ $this->title = 'Login';
     </div>
 
     <?php ActiveForm::end(); ?>
+    
+    <div class="login-links">
+        <div><a href="#">=> Passwort vergessen?</a></div>
+        <div><a href="#">=> Neu hier?</a></div>
+        <div><a href="#">=> Hilfe</a></div>
+    </div>
+    <div class="bottom-div">
+        <span>Impressum</span>
+        <span>Netzungbdingen</span>
+        <span class="copy-right">&copy; 2015 Coeus</span>
+    </div>
 
 </div>
