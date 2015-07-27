@@ -5,16 +5,14 @@ namespace app\models;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
-/**
- * This is the model class for table "users".
- *
- * @property string $id
- * @property string $name
- * @property string $email
- * @property string $password
- */
 class User extends ActiveRecord implements IdentityInterface
 {
+    public $id;
+    public $name;
+    public $email;
+    public $password;
+    public $auth_key;
+    public $password_reset_token;
 
     public function rules()
     {
@@ -54,4 +52,13 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->getAuthKey() === $authKey;
     }
 
+    public function setPassword($password)
+    {
+        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+    }
+
+    public function generateAuthKey()
+    {
+        $this->auth_key = Yii::$app->security->generateRandomString();
+    }
 }

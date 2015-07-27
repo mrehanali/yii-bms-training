@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Faker\Factory;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -57,7 +58,14 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+        // faker test
         $this->layout = 'login';
+        $f = Factory::create();
+        // die($f->name);
+        // end faker test
+
+        die(Yii::t('app/msg', 'test'));
+
 
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();

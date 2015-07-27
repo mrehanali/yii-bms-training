@@ -54,6 +54,21 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        // internationalization
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/msg' => 'msg.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
     ],
     'params' => $params,
     'aliases' => [
