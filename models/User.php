@@ -5,6 +5,14 @@ namespace app\models;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
+/**
+ *
+ * @property $id
+ * @property $name
+ * @property $email
+ *
+ */
+
 class User extends ActiveRecord implements IdentityInterface
 {
     public $id;
