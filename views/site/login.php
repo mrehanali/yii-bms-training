@@ -11,14 +11,14 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <img id="logo" src="<?php echo Yii::getAlias('@web').'/images/logo.png' ?>" />
     <p>Please fill out the following fields to login:</p>
 
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'options' => ['class' => 'form-horizontal'],
         'fieldConfig' => [
-            'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
+            'template' => "{error}{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\"></div>",
             'labelOptions' => ['class' => 'col-lg-1 control-label'],
         ],
     ]); ?>
@@ -28,17 +28,26 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $form->field($model, 'password')->passwordInput() ?>
 
     <?= $form->field($model, 'rememberMe', [
-        'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
+        'template' => "{error}<div class=\"col-lg-offset-1 col-lg-3\">{input}</div>\n<div class=\"col-lg-8\"></div>",
     ])->checkbox() ?>
 
     <div class="form-group">
-        <div class="col-lg-offset-1 col-lg-11">
+        <div class="col-lg-12">
             <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
         </div>
     </div>
 
     <?php ActiveForm::end(); ?>
-
+    <div id="bottom-links">
+        <ul>
+            <li><a href="#">Passwort vergessen?</a></li>
+            <li><a href="#">Neu hier?</a></li>
+            <li><a href="#">Hilfe</a></li>
+        </ul>
+    </div>
+    <div id="footer-text">
+        <span>Impressum</span><span>Nutzungsbedingungen</span><span class="pull-right">&copy; 2015 Lidl</span>
+    </div>
     <div class="col-lg-offset-1" style="color:#999;">
         You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
         To modify the username/password, please check out the code <code>app\models\User::$users</code>.

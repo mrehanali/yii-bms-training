@@ -16,18 +16,27 @@ body.login{
 body.login nav, body.login .breadcrumb, body.login footer{
     display: none;
 }
-.site-login .col-lg-offset-1{
+.site-login .col-lg-offset-1 {
     display: none;
 }
+body.login .wrap{
+    padding: 0;
+}
 body.login .wrap .container{
-    width: 970px;
+    background-repeat: no-repeat;
     height: auto;
     margin: 0 auto;
-    background-repeat: no-repeat;
-
+    padding: 0;
+    width: 970px;
 }
 body.login .wrap .container h1{
     display: none;
+}
+.site-login #logo{
+    border: 2px solid #fff;
+    display: block;
+    margin: 144px auto 104px;
+    width: 140px;
 }
 .site-login p{
     display: none;
@@ -55,39 +64,56 @@ body.login .wrap .container h1{
     color: #fff;
     display: block;
     font-size: 12px;
-    height: 34px;
+    height: 28px;
     line-height: normal;
     padding: 6px 12px;
     transition: none;
-    width: 100%;
+    width: 96%;
 }
 #login-form .form-group .has-error{
-    border-color: #a94442;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-color: #ff2f3b;
 }
 #login-form .form-group label{
     color: #fff;
     font-size: 12px;
     font-weight: normal;
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: right;
     width: 100px;
 }
 #login-form .form-group .col-lg-8{
-    clear: both;
+    display: none;
 }
-#login-form .form-group .col-lg-8 p.help-block{
+#login-form .form-group p.help-block{
+    clear: both;
     display: block;
-    height: 30px;
+    height: 24px;
     margin: 0 0 0 105px;
+    padding: 3px 0 8px 6px;
 }
 #login-form .form-group .col-lg-3{
-    margin: 0 0 0 20px;
+    margin: 0 0 0 12px;
     padding: 0;
-    width: 200px;
+    width: 300px;
 }
 #login-form div.checkbox{
-    margin-left: 120px;
+    margin-left: 112px;
+    padding-top: 0;
+}
+#login-form div.checkbox label{
+    padding: 22px 0 0 0;
+}
+#login-form div.checkbox p.help-block{
+    margin: 0;
+}
+#login-form .btn-primary{
+    background-color: #ffed00;
+    border-color: transparent;
+    border-radius: 0;
+    color: #000;
+    display: block;
+    margin: -4px auto;
+    width: 290px;
 }
 #loginform-rememberme{
     margin-top: 2px;
@@ -96,4 +122,43 @@ body.login .wrap .container h1{
     border: 1px solid #fff;
     border-radius: 0;
     box-shadow: none;
+}
+.site-login #bottom-links{
+    width: 295px;
+    margin: 40px auto 185px;
+    display: block;
+}
+.site-login #bottom-links ul{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+.site-login #bottom-links ul li:before {
+    content: "\2192 \0020\0020";
+}
+.site-login #bottom-links li{
+    list-style: none;
+}
+.site-login #bottom-links li a i{
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+}
+.site-login #bottom-links li a {
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+}
+.site-login #bottom-links li a:hover {
+    text-decoration: underline;
+}
+.site-login #footer-text{
+    border-top: 1px solid #fff;
+    padding: 12px 0px 50px 20px;
+    color: #fff;
+}
+.site-login #footer-text span{
+    display: inline;
+    margin-right: 20px;
+    color: #fff;
 }
