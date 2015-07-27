@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b1cc6c8c161c72bb689cfba0d4e1fd86",
+    "hash": "a95d3240f465f5898227432dab134e61",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -317,58 +317,6 @@
             "time": "2013-11-30 08:25:19"
         },
         {
-            "name": "fzaninotto/faker",
-            "version": "v1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d0190b156bcca848d401fb80f31f504f37141c8d",
-                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.5"
-            },
-            "suggest": {
-                "ext-intl": "*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "time": "2015-05-29 06:29:14"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.1",
             "source": {
@@ -420,6 +368,48 @@
                 "mailer"
             ],
             "time": "2015-06-06 14:19:39"
+        },
+        {
+            "name": "webtoucher/yii2-migrate",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webtoucher/yii2-migrate.git",
+                "reference": "d631eccea2f6640dbcb11a691fe450930a6d0d3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webtoucher/yii2-migrate/zipball/d631eccea2f6640dbcb11a691fe450930a6d0d3a",
+                "reference": "d631eccea2f6640dbcb11a691fe450930a6d0d3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "yii-extension",
+            "autoload": {
+                "psr-4": {
+                    "webtoucher\\migrate\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexey Kuznetsov",
+                    "email": "mirakuru@webtoucher.ru"
+                }
+            ],
+            "description": "Yii 2 extension for creating and running migrations",
+            "homepage": "https://github.com/webtoucher/yii2-migrate",
+            "keywords": [
+                "extension",
+                "migrate",
+                "yii"
+            ],
+            "time": "2014-07-25 10:19:36"
         },
         {
             "name": "yiisoft/yii2",
