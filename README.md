@@ -50,14 +50,40 @@ gedit /etc/apache2/sites-available/bms-learning.dev.conf
 a2ensite bms-learning.dev.conf
 service apache2 restart
 gedit /etc/hosts
+```
 Add
 127.0.0.1   bms-learning.dev
-```
-## Update Changes to Git
+
+## Git Versioning
+### Push Changes to Git
 ```sh
 sudo -s
 cd /home/coeus/projects/bms-learning
 git add -A
 git commit -m [comments]
 git push origin feature/YOUR_NAME
+```
+### Pull Changes from Git
+```sh
+sudo -s
+cd /home/coeus/projects/bms-learning
+git pull origin feature/YOUR_NAME
+```
+
+## ngrok Installation and Usage
+```sh
+sudo gedit /etc/apache2/sites-available/bms-learning.dev.conf
+```
+Update the IP Address for localhost (e.g. 127.0.0.3)
+```sh
+service apache2 restart
+sudo gedit /etc/hosts
+```
+Update
+127.0.0.3   bms-learning.dev
+```sh
+cd /home/coeus/projects/
+wget "https://dl.ngrok.com/ngrok_2.0.19_linux_amd64.zip"
+unzip ngrok_2.0.19_linux_amd64.zip
+./ngrok http 127.0.0.3:80
 ```
