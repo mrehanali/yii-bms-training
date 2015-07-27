@@ -6,22 +6,27 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'library' => [
+            'class' => 'app\modules\library\Module',
+        ],
+    ],
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => true,
             'enableStrictParsing' => true,
             'rules' => [
-                '/' => 'book/index',
+                '/' => 'library/book/index',
                 'about' => 'site/about',
                 'contact' => 'site/contact',
                 'login' => 'site/login',
                 'logout' => 'site/logout',
-                'books' => 'book/index',
-                'book/create' => 'book/create',
-                'book/edit/<id:\d+>' => 'book/edit',
-                'book/<id:\d+>' => 'book/show',
-                'book/delete/<id:\d+>' => 'book/destroy',
+                'books' => 'library/book/index',
+                'book/create' => 'library/book/create',
+                'book/edit/<id:\d+>' => 'library/book/edit',
+                'book/<id:\d+>' => 'library/book/show',
+                'book/delete/<id:\d+>' => 'library/book/destroy',
             ],
         ],
         'request' => [

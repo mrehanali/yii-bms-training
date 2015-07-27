@@ -1,5 +1,5 @@
 <?php
-namespace app\models;
+namespace app\modules\library\models;
 class Utils {
     public static function printArray($array){
         echo '<pre>';
