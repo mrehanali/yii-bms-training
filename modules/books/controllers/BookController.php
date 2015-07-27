@@ -9,6 +9,7 @@ use Yii;
 
 class BookController extends Controller
 {
+    public $defaultAction = 'index';
     public function actionIndex()
     {
         return $this->render('index');
