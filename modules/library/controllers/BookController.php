@@ -3,7 +3,6 @@
 //namespace app\controllers;
 namespace app\modules\library\controllers;
 
-use app\modules\library\models\Utils;
 use app\modules\library\models\Book;
 use yii\web\Controller;
 use Yii;

@@ -10,6 +10,9 @@ $config = [
         'library' => [
             'class' => 'app\modules\library\Module',
         ],
+        'auth' => [
+            'class' => 'app\modules\auth\Module',
+        ],
     ],
     'components' => [
         'urlManager' => [
@@ -20,7 +23,7 @@ $config = [
                 '/' => 'library/book/index',
                 'about' => 'site/about',
                 'contact' => 'site/contact',
-                'login' => 'site/login',
+                'login' => 'auth/user/login',
                 'logout' => 'site/logout',
                 'books' => 'library/book/index',
                 'book/create' => 'library/book/create',
