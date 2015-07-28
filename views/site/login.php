@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="inner-fld-div">
 
         <div class="form-field-grp">
-            <?= $form->field($model, 'username')->textInput(['class' => 'field-height'])->label('Name', ['class' => 'label-right-margin']) ?>
+            <?= $form->field($model, 'name')->textInput(['class' => 'field-height'])->label('Name', ['class' => 'label-right-margin']) ?>
         </div>
 
         <div class="form-field-grp">

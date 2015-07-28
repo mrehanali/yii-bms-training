@@ -58,16 +58,7 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
-        echo Yii::$app->security->generatePasswordHash("123456");
-        die();
-        // faker test
         $this->layout = 'login';
-        $f = Factory::create();
-        // die($f->name);
-        // end faker test
-
-      //  die(Yii::t('app/error', 'wrong_password {name}',['name'=>'test name']));
-
 
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
