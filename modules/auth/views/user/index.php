@@ -1,55 +1,33 @@
 <?php
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-
-/* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model app\models\LoginForm */
-
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Users';
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-    <img id="logo" src="<?php echo Yii::getAlias('@web').'/images/logo.png' ?>" />
-    <p>Please fill out the following fields to login:</p>
-
-    <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'options' => ['class' => 'form-horizontal'],
-        'fieldConfig' => [
-            'template' => "{error}{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\"></div>",
-            'labelOptions' => ['class' => 'col-lg-1 control-label'],
-        ],
-    ]); ?>
-
-    <?= $form->field($model, 'username') ?>
-
-    <?= $form->field($model, 'password')->passwordInput() ?>
-
-    <?= $form->field($model, 'rememberMe', [
-        'template' => "{error}<div class=\"col-lg-offset-1 col-lg-3\">{input}</div>\n<div class=\"col-lg-8\"></div>",
-    ])->checkbox() ?>
-
-    <div class="form-group">
-        <div class="col-lg-12">
-            <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-        </div>
-    </div>
-
-    <?php ActiveForm::end(); ?>
-    <div id="bottom-links">
-        <ul>
-            <li><a href="#">Passwort vergessen?</a></li>
-            <li><a href="#">Neu hier?</a></li>
-            <li><a href="#">Hilfe</a></li>
-        </ul>
-    </div>
-    <div id="footer-text">
-        <span>Impressum</span><span>Nutzungsbedingungen</span><span class="pull-right">&copy; 2015 Lidl</span>
-    </div>
-    <div class="col-lg-offset-1" style="color:#999;">
-        You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-        To modify the username/password, please check out the code <code>app\models\User::$users</code>.
-    </div>
-</div>
+<h1><?php echo $this->title; ?></h1>
+<?php
+if (Yii::$app->session->hasFlash('notification')){
+    echo $this->render('_notify', ['message' => $notification['message'], 'status' => $notification['status']]);
+}
+echo Html::a('Create New', array('user/create'), array('class' => 'btn btn-primary pull-right')); ?>
+<table class="table table-focus">
+    <?php if(!empty($users)){ ?>
+        <tr>
+            <th>User Id</th>
+            <th>Username</th>
+            <th></th>
+        </tr>
+        <?php foreach($users as $record) { ?>
+            <tr id="book_<?php echo $record->id; ?>">
+                <td><?php echo $record->id; ?></td>
+                <td><?php echo Html::a($record->username, ['user/show', 'id' => $record->id]); ?></td>
+                <td>
+                    <?php echo Html::a('&nbsp;Edit', ['user/edit', 'id' => $record->id], ['class' => 'glyphicon glyphicon-edit']); ?>
+                    <?php echo Html::a('&nbsp;Delete', ['user/destroy', 'id' => $record->id], ['class' => 'glyphicon glyphicon-trash', 'onclick' => "return confirm('Are you sure you want to delete this user?');"]); ?>
+                </td>
+            </tr>
+        <?php } //end of foreach?>
+    <?php } else { ?>
+        <tr>
+            <td>No Record(s) Found</td>
+        </tr>
+    <?php } ?>
+</table>

@@ -7,9 +7,12 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\modules\auth\models\LoginForm;
+use app\modules\auth\models\User;
 
 class UserController extends Controller
 {
+    public $defaultAction = 'index';
+
     public function behaviors()
     {
         return [
@@ -46,9 +49,18 @@ class UserController extends Controller
         ];
     }
 
+    /**
+     * Provides an array of Users.
+     *
+     * @param      nothing.
+     *
+     * @return     Rendered listing view with $users.
+     **/
     public function actionIndex()
     {
-        return $this->render('index');
+        $query = User::find();
+        $users = $query->orderBy('username')->all();
+        return $this->render('index', ['users' => $users]);
     }
 
     public function actionLogin()
@@ -58,7 +70,6 @@ class UserController extends Controller
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -67,6 +78,10 @@ class UserController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionPass(){
+        echo Yii::$app->security->generatePasswordHash('admin');
     }
 
     public function actionLogout()

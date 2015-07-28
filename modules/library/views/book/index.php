@@ -25,7 +25,7 @@ echo Html::a('Create New', array('book/create'), array('class' => 'btn btn-prima
 		<td><?php echo $categories[$record->category_id]; ?></td>
 		<td>
 			<?php echo Html::a('&nbsp;Edit', ['book/edit', 'id' => $record->id], ['class' => 'glyphicon glyphicon-edit']); ?>
-			<?php echo Html::a('&nbsp;Delete', ['book/destroy', 'id' => $record->id], ['class' => 'glyphicon glyphicon-trash', 'onclick' => "return confirm('Are you sure you want to delete this item?');"]); ?>
+			<?php echo Html::a('&nbsp;Delete', ['book/destroy', 'id' => $record->id], ['class' => 'glyphicon glyphicon-trash', 'onclick' => "return confirm('Are you sure you want to delete this book?');"]); ?>
 		</td>
 	</tr>
 <?php } //end of foreach?>
