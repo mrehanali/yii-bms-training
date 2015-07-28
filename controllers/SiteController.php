@@ -60,11 +60,9 @@ class SiteController extends Controller
     public function actionLogin()
     {
         $this->layout = 'login';
-
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -146,7 +144,7 @@ class SiteController extends Controller
 
     public function actionSay($message = ' Hello')
     {
-        GPModel::printString(Yii::t('app', 'a'));
+        GPModel::printString(\Yii::$app->security->generatePasswordHash('123'));
         return $this->render('say', ['message' => $message]);
     }
 }

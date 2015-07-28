@@ -72,7 +72,7 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * Finds user by username
      *
-     * @param  string $name
+     * @param  string $username
      * @return static|null
      */
     public static function findByUsername($username)
@@ -133,8 +133,8 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function validatePassword($password)
     {
-     //   GPModel::printString($password . '   ' . $this->password);
-          return \Yii::$app->security->validatePassword($password, $this->password);
+        //     GPModel::printString($password . '   ' . $this->password);
+        return \Yii::$app->security->validatePassword($password, $this->password);
     }
 
     /**
