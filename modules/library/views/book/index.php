@@ -1,6 +1,6 @@
 <?php
 use yii\helpers\Html;
-$this->title = 'Books';
+$this->title = \Yii::t('app', 'Books');
 ?>
 <h1><?php echo $this->title; ?></h1>
 <?php

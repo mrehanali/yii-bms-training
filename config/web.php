@@ -14,6 +14,7 @@ $config = [
             'class' => 'app\modules\auth\Module',
         ],
     ],
+    'language' => 'de',
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -32,16 +33,30 @@ $config = [
                 'book/delete/<id:\d+>' => 'library/book/destroy',
             ],
         ],
+        'user' => [
+            'identityClass' => 'app\modules\auth\models\User',
+            'enableAutoLogin' => false,
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/msg' => 'msg.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'qdPRczoNZVS9fkSZi4nRw6Z_MJ7fXZL2',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
-        ],
-        'user' => [
-            'identityClass' => 'app\modules\auth\models\User',
-            'enableAutoLogin' => false,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
