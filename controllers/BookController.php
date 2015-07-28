@@ -1,9 +1,9 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\books\controllers;
 
 use yii\web\Controller;
-use app\models\Book;
+use app\modules\books\models\Book;
 
 class BookController extends Controller
 {

@@ -6,6 +6,17 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'books' => [
+            'class' => 'app\modules\books\booksmodule',
+        ],
+        'forum' => [
+            'class' => 'app\modules\forum\forummodule',
+        ],
+        'myforum' => [
+            'class' => 'app\modules\forum\forummodule',
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -16,7 +27,7 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+            'enableAutoLogin' => false,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -41,17 +52,18 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'enableStrictParsing' => true,
+            'enableStrictParsing' => false,
             'rules' => [
-                'login' => 'site/login', 
-                'logout' => 'site/logout', 
-                'books' => 'book/list', 
-                'books/create' => 'book/create',
-                'books/update/<id:\d+>' => 'book/update',
-                'books/delete/<id:\d+>' => 'book/delete',
+                'login' => 'books/site/login', 
+                'logout' => 'books/site/logout', 
+                'books' => 'books/book/list', 
+                'books/create' => 'books/book/create',
+                'books/update/<id:\d+>' => 'books/book/update',
+                'books/delete/<id:\d+>' => 'books/book/delete',
             ],
-        ]
+        ],
     ],
+
     'params' => $params,
 ];
 
