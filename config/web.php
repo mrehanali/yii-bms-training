@@ -11,6 +11,7 @@ $config = [
             'class' => 'app\modules\books\BooksModule',
         ],
     ],
+    'language' => 'de',
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,

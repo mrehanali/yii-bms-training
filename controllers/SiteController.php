@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\GPModel;
 use Faker\Factory;
 use Yii;
 use yii\filters\AccessControl;
@@ -145,7 +146,7 @@ class SiteController extends Controller
 
     public function actionSay($message = ' Hello')
     {
-
+        GPModel::printString(Yii::t('app', 'a'));
         return $this->render('say', ['message' => $message]);
     }
 }
